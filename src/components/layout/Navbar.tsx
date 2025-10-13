@@ -64,7 +64,18 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src="/Icon.png" alt="logo" className="h-9 w-9 object-contain rounded-full border-2 border-accent" />
+          <img 
+            src="/Icon.png" 
+            alt="logo" 
+            className="h-9 w-9 object-contain rounded-full border-2 border-accent"
+            onError={(e) => {
+              console.error('Logo failed to load:', '/Icon.png');
+              e.currentTarget.style.display = 'none';
+            }}
+            onLoad={() => {
+              console.log('Logo loaded successfully:', '/Icon.png');
+            }}
+          />
           <p className="flex cursor-pointer text-[18px] font-bold text-white ">
             {config.html.title}
           </p>

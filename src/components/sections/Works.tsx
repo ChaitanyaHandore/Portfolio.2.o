@@ -32,6 +32,13 @@ const ProjectCard: React.FC<{ index: number } & TProject> = ({
               src={image}
               alt={name}
               className="h-full w-full rounded-2xl object-cover"
+              onError={(e) => {
+                console.error('Image failed to load:', image);
+                e.currentTarget.style.display = 'none';
+              }}
+              onLoad={() => {
+                console.log('Image loaded successfully:', image);
+              }}
             />
             <div className="card-img_hover absolute inset-0 m-3 flex justify-end">
               <div
