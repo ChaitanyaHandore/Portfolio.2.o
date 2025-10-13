@@ -1,4 +1,8 @@
-import { BrowserRouter } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 
 import {
   About,
@@ -11,20 +15,15 @@ import {
   Works,
   StarsCanvas,
 } from "./components";
-import { useEffect } from "react";
-import { config } from "./constants/config";
+import LeftNavbar from "./components/layout/LeftNavbar";
+import { SectionWrapper } from "./hoc";
 
 const App = () => {
-  useEffect(() => {
-    if (document.title !== config.html.title) {
-      document.title = config.html.title;
-    }
-  }, []);
-
   return (
-    <BrowserRouter>
-      <div className="bg-primary relative z-0 matrix-bg">
-        <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
+    <Router>
+      <div className="relative z-0 bg-primary">
+        <LeftNavbar />
+        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />
         </div>
@@ -38,7 +37,7 @@ const App = () => {
           <StarsCanvas />
         </div>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 };
 

@@ -81,18 +81,18 @@ const Navbar = () => {
           </p>
         </Link>
 
-        <ul className="hidden list-none flex-row gap-10 sm:flex">
-          {navLinks.map((nav) => (
-            <li
-              key={nav.id}
-              className={`${
-                active === nav.id ? "text-white" : "text-secondary"
-              } cursor-pointer text-[18px] font-medium hover:text-white`}
-            >
-              <a href={`#${nav.id}`}>{nav.title}</a>
-            </li>
-          ))}
-        </ul>
+        {/* Hire Me Button */}
+        <div className="hidden sm:flex items-center">
+          <button
+            className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-red-500/25"
+            onClick={() => {
+              console.log('Hire Me button clicked!');
+              window.open('/Portfolio.2.o/CV.pdf', '_blank');
+            }}
+          >
+            Hire Me!
+          </button>
+        </div>
 
         <div className="flex flex-1 items-center justify-end sm:hidden">
           <img
@@ -121,6 +121,18 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+              <li className="mt-4">
+                <button
+                  className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full text-sm transition-all duration-300"
+                  onClick={() => {
+                    console.log('Mobile Hire Me button clicked!');
+                    window.open('/Portfolio.2.o/CV.pdf', '_blank');
+                    setToggle(!toggle);
+                  }}
+                >
+                  Hire Me!
+                </button>
+              </li>
             </ul>
           </div>
         </div>

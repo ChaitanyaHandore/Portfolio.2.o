@@ -12,7 +12,7 @@ type TConfig = {
   };
   hero: {
     name: string;
-    p: string[];
+    description: string;
   };
   contact: {
     form: {
@@ -46,7 +46,7 @@ export const config: TConfig = {
   },
   hero: {
     name: "Chaitanya Handore",
-    p: ["I develop AI solutions, machine", "learning models and web applications"],
+    description: "I develop AI solutions, machine learning models and web applications",
   },
   contact: {
     p: "Get in touch",

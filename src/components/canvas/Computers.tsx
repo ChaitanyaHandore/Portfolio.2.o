@@ -5,26 +5,27 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../layout/Loader";
 
 const Computers: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const computer = useGLTF("./robot/scene.gltf");
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
+      <hemisphereLight intensity={0.8} groundColor="#3b82f6" />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
         penumbra={1}
-        intensity={1}
+        intensity={2}
         castShadow
         shadow-mapSize={1024}
-        color="#3b82f6"
+        color="#ffffff"
       />
-      <pointLight intensity={1} color="#3b82f6" />
+      <pointLight intensity={2} color="#ffffff" position={[0, 5, 5]} />
+      <directionalLight intensity={1} position={[10, 10, 5]} color="#ffffff" />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -4.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
+        scale={isMobile ? 1.3 : 1.8}
+        position={isMobile ? [0, -3, 0] : [0, -3, 0]}
+        rotation={[0, Math.PI, 0]}
       />
     </mesh>
   );
