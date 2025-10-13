@@ -224,7 +224,7 @@ const projects: TProject[] = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/Images/Crop.png",
+    image: "/Crop.png",
     sourceCodeLink: "https://github.com/ChaitanyaHandore/crop_detection_thesis",
   },
   {
@@ -245,7 +245,7 @@ const projects: TProject[] = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/Images/Disaster.png",
+    image: "/Disaster.png",
     sourceCodeLink: "https://github.com/ChaitanyaHandore/Disaster-Relief-Routing-System",
   },
   {
@@ -266,7 +266,7 @@ const projects: TProject[] = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/Images/Recipe.png",
+    image: "/Recipe.png",
     sourceCodeLink: "https://github.com/ChaitanyaHandore/RecipeRecommender_AI-main",
   },
   {
@@ -287,7 +287,7 @@ const projects: TProject[] = [
         color: "pink-text-gradient",
       },
     ],
-    image: "/Images/Stock.png",
+    image: "/Stock.png",
     sourceCodeLink: "https://github.com/ChaitanyaHandore",
   },
 ];

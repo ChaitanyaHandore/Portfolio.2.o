@@ -64,7 +64,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src="/Images/Icon.png" alt="logo" className="h-9 w-9 object-contain rounded-full border-2 border-accent" />
+          <img src="/Icon.png" alt="logo" className="h-9 w-9 object-contain rounded-full border-2 border-accent" />
           <p className="flex cursor-pointer text-[18px] font-bold text-white ">
             {config.html.title}
           </p>
