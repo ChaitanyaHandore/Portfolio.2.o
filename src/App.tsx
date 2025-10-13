@@ -1,8 +1,4 @@
-import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 
 import {
   About,
@@ -16,7 +12,6 @@ import {
   StarsCanvas,
 } from "./components";
 import LeftNavbar from "./components/layout/LeftNavbar";
-import { SectionWrapper } from "./hoc";
 
 const App = () => {
   return (
