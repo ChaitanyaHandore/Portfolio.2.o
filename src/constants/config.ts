@@ -46,7 +46,7 @@ export const config: TConfig = {
   },
   hero: {
     name: "Chaitanya Handore",
-    description: "I develop AI solutions, machine learning models and web applications",
+    description: "AI Engineer crafting intelligent solutions that bridge the gap between data and innovation",
   },
   contact: {
     p: "Get in touch",

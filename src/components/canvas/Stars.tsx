@@ -7,23 +7,23 @@ import { TypedArray } from "three";
 const Stars = (props: any) => {
   const ref = useRef<THREE.Points>();
   const [sphere] = useState<TypedArray>(() =>
-    random.inSphere(new Float32Array(5001), { radius: 1.2 })
+    random.inSphere(new Float32Array(150000), { radius: 1.2 })
   );
 
   useFrame((_state, delta) => {
     if (ref.current) {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
+      ref.current.rotation.x = 0;
+      ref.current.rotation.y -= delta / 30;
     }
   });
 
   return (
-    <group rotation={[0, 0, Math.PI / 4]}>
+    <group rotation={[0, 0, 0]}>
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
           color="#3b82f6"
-          size={0.002}
+          size={0.0005}
           sizeAttenuation={true}
           depthWrite={false}
         />
