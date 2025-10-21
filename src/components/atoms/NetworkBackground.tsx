@@ -56,7 +56,7 @@ const NetworkBackground: React.FC = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Update node positions - make them follow mouse with some randomness
-      nodes.forEach((node, index) => {
+      nodes.forEach((node) => {
         // Calculate distance to mouse
         const dx = mousePosition.x - node.x;
         const dy = mousePosition.y - node.y;

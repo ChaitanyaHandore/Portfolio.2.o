@@ -1,8 +1,6 @@
 import { BallCanvas } from "../canvas";
 import { SectionWrapper } from "../../hoc";
 import { technologies } from "../../constants";
-import { Header } from "../atoms/Header";
-import { config } from "../../constants/config";
 
 const Tech = () => {
   return (

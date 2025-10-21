@@ -1,4 +1,4 @@
-import { useState, useRef, Suspense, useMemo } from "react";
+import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import { random } from "maath";
@@ -20,35 +20,6 @@ const SpaceBackground = (props: any) => {
     return sizes;
   });
 
-  const [starColors] = useState(() => {
-    const colors = new Float32Array(5000000 * 3);
-    for (let i = 0; i < 5000000; i++) {
-      const baseColor = Math.random();
-      if (baseColor < 0.005) {
-        // Very bright blue-white stars (0.5%)
-        colors[i * 3] = 0.9;     // R
-        colors[i * 3 + 1] = 0.95; // G
-        colors[i * 3 + 2] = 1.0; // B
-      } else if (baseColor < 0.02) {
-        // Bright blue stars (1.5%)
-        colors[i * 3] = 0.4;     // R
-        colors[i * 3 + 1] = 0.6; // G
-        colors[i * 3 + 2] = 1.0; // B
-      } else if (baseColor < 0.08) {
-        // Medium blue stars (6%)
-        colors[i * 3] = 0.2;     // R
-        colors[i * 3 + 1] = 0.4; // G
-        colors[i * 3 + 2] = 0.8; // B
-      } else {
-        // Dim white/blue stars (92.5%) - mostly tiny background stars
-        const intensity = 0.1 + Math.random() * 0.2;
-        colors[i * 3] = intensity;     // R
-        colors[i * 3 + 1] = intensity; // G
-        colors[i * 3 + 2] = intensity; // B
-      }
-    }
-    return colors;
-  });
 
   useFrame((_state, delta) => {
     if (ref.current) {
@@ -64,10 +35,10 @@ const SpaceBackground = (props: any) => {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
+          color="#3b82f6"
           size={starSizes}
           sizeAttenuation={true}
           depthWrite={false}
-          vertexColors={true}
         />
       </Points>
     </group>
